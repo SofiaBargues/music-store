@@ -1,4 +1,14 @@
+import { useState } from "react"
+
+
 export default function Header(){
+
+    const [showProfileMenu, setShowProfileMenu] = useState(false);
+
+    function handleProfileButton(){
+        setShowProfileMenu(!showProfileMenu)
+    }
+
     return <header
     className="bg-gray-800 text-white p-4 flex justify-between items-center"
   >
@@ -9,11 +19,12 @@ export default function Header(){
       </a>
 
       <div className="relative inline-block text-left">
-        <button type="button" className="inline-flex items-center">
+        <button type="button" className="inline-flex items-center" onClick={handleProfileButton}>
           <span className="material-icons"> account_circle </span>
           <span className="ml-2">Profile</span>
           <span className="material-icons"> arrow_drop_down </span>
         </button>
+        { showProfileMenu &&
         <div
           className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
         >
@@ -43,6 +54,7 @@ export default function Header(){
             >
           </div>
         </div>
+        }
       </div>
     </div>
   </header>
