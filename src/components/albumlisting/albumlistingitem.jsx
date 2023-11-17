@@ -1,4 +1,4 @@
-export default function AlbumListingItem({  album }) {
+export default function AlbumListingItem({ album }) {
 
     
 
@@ -17,7 +17,7 @@ export default function AlbumListingItem({  album }) {
         </div>
 
         <div class="text-left">
-            <h3 class="text-md font-bold mb-1 text-white">{album.name}</h3>
+            <h3 class="text-md font-bold mb-1 text-white">{album.title}</h3>
             <p class="text-sm mb-2 text-gray-400">By Singer</p>
             <p class="text-sm mb-2 text-green-200">$9.99</p>
 

@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { Menu } from "../Menu";
 
 export default function Header(){
 
@@ -10,7 +10,7 @@ export default function Header(){
     }
 
     return <header
-    className="bg-gray-800 text-white p-4 flex justify-between items-center"
+    className="bg-gray-800 text-white p-4 flex justify-between items-center z-10"
   >
     <h1 className="text-2xl">Music Store</h1>
     <div className="flex items-center">
@@ -24,38 +24,8 @@ export default function Header(){
           <span className="ml-2">Profile</span>
           <span className="material-icons"> arrow_drop_down </span>
         </button>
-        { showProfileMenu &&
-        <div
-          className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
-        >
-          <div
-            className="py-1"
-            role="menu"
-            aria-orientation="vertical"
-            aria-labelledby="options-menu"
-          >
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              >Your Profile</a
-            >
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              >Settings</a
-            >
-            <a
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-              >Sign out</a
-            >
-          </div>
+        { showProfileMenu && <Menu/>}
         </div>
-        }
       </div>
-    </div>
-  </header>
+      </header>
 }
